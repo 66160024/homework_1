@@ -116,9 +116,17 @@ section img:hover {
 }
 
 .img-highlight {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 1rem;
+}
+
+.img-highlight img {
+    text-align: center;
+    justify-content: center;
 }
 
 .imageshl {
