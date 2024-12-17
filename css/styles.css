@@ -1,0 +1,48 @@
+/* รีเซ็ตค่าพื้นฐาน */
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+} 
+
+body { 
+    font-family: Arial, sans-serif; 
+    line-height: 1.6; 
+    background-color: #ffffff; /* เปลี่ยนพื้นหลังของ body เป็นขาว */
+    color: #799cf7; 
+}
+
+header { 
+    background: #799cf7; /* พื้นหลังของ header ยังเป็นสี #799cf7 */
+    color: #fff; 
+    padding: 1rem 0; 
+    text-align: center; 
+} 
+ 
+
+section img { 
+    width: 100%; 
+    max-width: 600px; 
+    height: auto; 
+    border-radius: 10px; 
+    margin-bottom: 1rem; 
+    transition: transform 0.3s ease; 
+}
+
+section img:hover {
+    transform: scale(1.05);
+}
+
+section p { 
+    font-size: 1rem; 
+    color: #555; 
+}
+.img-highlight{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.imageshl {
+    display: flex;
+    justify-content: space-around;
+    width: 200px;
+}
