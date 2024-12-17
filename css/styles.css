@@ -119,8 +119,8 @@ section img:hover {
     text-align: center;
     justify-content: center;
     align-items: center;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    display: inline-flex;
+    grid-template-columns: 1fr 1fr;
     gap: 1rem;
 }
 
@@ -130,9 +130,16 @@ section img:hover {
 }
 
 .imageshl {
-    width: 100%;
+    width: 30%;
     height: auto;
     border-radius: 8px;
+}
+.imagesabout{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* เพื่อให้รูปภาพอยู่ตรงกลาง */
+    gap: 1rem;
+    margin-bottom: 2rem;
 }
 
 /* ข้อความคำบรรยาย */
