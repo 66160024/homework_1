@@ -1,120 +1,150 @@
 /* รีเซ็ตค่าพื้นฐาน */
-* { 
-    margin: 0; 
-    padding: 0; 
-    box-sizing: border-box; 
-} 
-
-body { 
-    font-family: Arial, sans-serif; 
-    line-height: 1.6; 
-    background-color: #ffffff; /* เปลี่ยนพื้นหลังของ body เป็นขาว */
-    color: #799cf7; 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-header { 
-    background: #799cf7; /* พื้นหลังของ header ยังเป็นสี #799cf7 */
-    color: #fff; 
-    padding: 1rem 0; 
-    text-align: center; 
-} 
-@media screen and (max-width:800px) {
-    .menu{
-        display: flex;
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/* ส่วนหัวของเว็บไซต์ */
+header {
+    background: #799cf7; /* สีพื้นหลัง */
+    color: #fff; /* สีข้อความ */
+    padding: 1.5rem 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+/* เมนูนำทาง */
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #ffd700; /* เปลี่ยนสีเมื่อ hover */
+}
+
+/* เมนูมือถือ */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-toggle .bar {
+    width: 25px;
+    height: 3px;
+    margin: 3px 0;
+    background-color: #fff;
+}
+
+@media (max-width: 768px) {
+    nav ul {
         flex-direction: column;
-        align-items: flex-start;
-    }
-    .menu-toggle{
-        display: flex;
-        flex-direction: column;
-        cursor: pointer;
-    }
-    .menu-toggle .bar{
-        background-color: black;
-    }
-    .title{
         display: none;
-        flex-direction: column;
-        width: 100%;
-        position: absolute;
-        top: 50px;
-        left: 0;
-        z-index: 1;
+        background-color: #799cf7;
+        padding: 1rem;
+        text-align: center;
     }
-    .title.active{
+
+    nav ul.active {
         display: flex;
     }
 
+    .menu-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+    }
 }
 
-nav ul { 
-    list-style: none; 
-    display: flex; 
-    justify-content: center; 
-    gap: 1.5rem; 
-} 
+/* เนื้อหาหลัก */
+main {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
 
-nav a { 
-    color: #fff; 
-    text-decoration: none; 
-    font-size: 1.1rem; 
-    transition: color 0.3s ease; 
-} 
+section h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #2c3e50;
+    font-size: 2rem;
+    font-weight: bold;
+}
 
-nav a:hover { 
-    color: #ffd700; 
-} 
+section div {
+    text-align: center;
+    margin-bottom: 2rem;
+}
 
-main { 
-    padding: 2rem; 
-    max-width: 1200px; 
-    margin: 0 auto; 
-    background-color: #ffffff; /* พื้นหลังของ main เป็นสีขาว */
-} 
-
-section h2 { 
-    margin-bottom: 1rem; 
-    font-size: 2rem; 
-    color: #2c3e50; 
-    text-align: center; 
-} 
-
-/* สไตล์การแสดงรูปภาพและคำบรรยาย */
-section div { 
-    display: flex; 
-    flex-direction: column; 
-    align-items: center; 
-    text-align: center; 
-    background: #fff; /* พื้นหลังของ div ในแต่ละ section เป็นสีขาว */
-    border-radius: 10px; 
-    padding: 1.5rem; 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
-    margin-bottom: 2rem; 
-} 
-
-section img { 
-    width: 100%; 
-    max-width: 600px; 
-    height: auto; 
-    border-radius: 10px; 
-    margin-bottom: 1rem; 
-    transition: transform 0.3s ease; 
+section img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s ease-in-out;
 }
 
 section img:hover {
     transform: scale(1.05);
 }
 
-section p { 
-    font-size: 1rem; 
-    color: #555; 
-}
-.img-highlight{
+.img-highlight {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
 }
+
 .imageshl {
-    display: flex;
-    justify-content: space-around;
-    width: 200px;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* ข้อความคำบรรยาย */
+p {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.8;
+    margin-top: 1rem;
+    padding: 0 1rem;
+}
+
+/* ส่วนท้ายเว็บไซต์ */
+footer {
+    text-align: center;
+    background-color: #2c3e50;
+    color: #fff;
+    padding: 1rem 0;
+    margin-top: 2rem;
+}
+
+footer p {
+    margin: 0;
 }
